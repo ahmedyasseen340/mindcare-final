@@ -84,7 +84,50 @@ uvicorn main:app --reload
 ## 🔐 Environment Variables
 Copy `.env.example` to `.env` and fill in: DB credentials, OpenAI key,
 Firebase, Paymob/Fawry, Google Maps. **Never commit real keys.**
+---
 
+## 📁 Detailed Project Structure
+
+`text
+mindcare-final/
+├── docs/                               # Project Documentation & API Specs
+├── backend/                            # Laravel REST API
+│   ├── app/
+│   │   ├── Http/Controllers/
+│   │   ├── Models/
+│   │   └── Services/
+│   ├── routes/
+│   │   └── api.php                     # API Endpoints
+│   ├── database/
+│   └── tests/
+├── frontend/                           # React + TailwindCSS Web Dashboard
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   └── context/
+│   └── package.json
+├── mobile-app/                         # Flutter Patient Application
+│   ├── lib/
+│   │   ├── screens/
+│   │   ├── widgets/
+│   │   ├── services/
+│   │   └── main.dart
+│   └── pubspec.yaml
+├── ai-services/                        # Python AI Microservices
+│   ├── chatbot/                        # LLM (PHQ-9 / GAD-7)
+│   ├── vision/                         # Facial Emotion Detection (DeepFace/OpenCV)
+│   ├── voice/                          # Voice Tone Analysis (Whisper/Librosa)
+│   ├── ocr/                            # Prescription OCR
+│   ├── crisis-classifier/              # Crisis Safety Net
+│   └── requirements.txt
+├── data-analysis/                      # Mood Index & Weekly Progress Summaries
+├── assets/                             # 3D Brain Models (.glb) & Audio Files
+├── testing/                            # Test Cases & Bug Reports
+├── database/
+│   └── schema.sql                      # Database Schema
+├── .env.example                        # Environment Variables Template
+└── README.md                           # Main Project Documentation
 ## 👥 Team
 1. Ahmed Yasseen Ibrahim Mohamed
 2. Alaa Abdelrahman Muhamed Abdelrahman
@@ -98,3 +141,4 @@ Firebase, Paymob/Fawry, Google Maps. **Never commit real keys.**
 ## ⚠️ Disclaimer
 MindCare is an academic project and does not replace professional medical care.
 In an emergency, contact your local emergency or mental health hotline.
+
