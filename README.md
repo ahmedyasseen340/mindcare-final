@@ -37,11 +37,12 @@ doctors, and multimodal emotion analysis to make psychological support easier to
 |---|---|
 | `backend/` | Laravel REST API |
 | `mobile-app/` | Flutter patient app |
-| `web-dashboard/` | React dashboard for doctors/admins |
+| `frontend/` | React dashboard for doctors/admins |
 | `ai-services/` | Python AI microservices |
-| `automation/` | n8n workflows |
 | `docs/` | Documentation, ERD, SQL schema |
 | `assets/` | 3D models and audio files |
+| `data-analysis/` | Mood Index, weekly summaries, and progress charts |
+| `testing/` | Test cases, bug reports, and test results |
 
 ## 🚀 Getting Started
 ### Prerequisites
@@ -57,9 +58,9 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-### Web Dashboard
+### Frontend (React)
 ```bash
-cd web-dashboard
+cd frontend
 npm install
 npm run dev
 ```
