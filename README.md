@@ -128,6 +128,7 @@ mindcare-final/
 │   └── schema.sql                      # Database Schema
 ├── .env.example                        # Environment Variables Template
 └── README.md                           # Main Project Documentation
+
 ## 👥 Team
 1. Ahmed Yasseen Ibrahim Mohamed
 2. Alaa Abdelrahman Muhamed Abdelrahman
