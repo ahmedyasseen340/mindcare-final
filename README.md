@@ -88,7 +88,7 @@ Firebase, Paymob/Fawry, Google Maps. **Never commit real keys.**
 
 ## 📁 Detailed Project Structure
 
-`text
+```text
 mindcare-final/
 ├── docs/                               # Project Documentation & API Specs
 ├── backend/                            # Laravel REST API
