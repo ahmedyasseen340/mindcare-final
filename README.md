@@ -43,6 +43,7 @@ doctors, and multimodal emotion analysis to make psychological support easier to
 | `assets/` | 3D models and audio files |
 | `data-analysis/` | Mood Index, weekly summaries, and progress charts |
 | `testing/` | Test cases, bug reports, and test results |
+| `chapters/` | Graduation project documentation chapters |
 
 ## 🚀 Getting Started
 ### Prerequisites
