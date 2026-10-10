@@ -1,4 +1,4 @@
-# MindCare – API Endpoints
+# Calma – API Endpoints
 
 Base URL: `/api/v1` (Laravel). All endpoints except register/login need
 `Authorization: Bearer <token>`.
