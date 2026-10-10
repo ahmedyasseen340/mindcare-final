@@ -1,8 +1,8 @@
-# MindCare – System Architecture
+# Calma – System Architecture
 
 ## 1. Overview
 
-MindCare is made of four main parts that talk to each other over HTTPS:
+Calma is made of four main parts that talk to each other over HTTPS:
 
 | Component | Tech | Users |
 |---|---|---|
