@@ -1,8 +1,8 @@
-# 🧠 MindCare – Mental Health Support Platform
+# 🧠 Calma – Mental Health Support Platform
 
 Graduation Project – SH.A. Academy
 
-MindCare is a mental health support platform available as a **mobile app** (patients)
+Calma is a mental health support platform available as a **mobile app** (patients)
 and a **web dashboard** (therapists & admins). It combines an AI chatbot, licensed
 doctors, and multimodal emotion analysis to make psychological support easier to access.
 
@@ -89,7 +89,7 @@ Firebase, Paymob/Fawry, Google Maps. **Never commit real keys.**
 ## 📁 Detailed Project Structure
 
 ```text
-mindcare-final/
+ Calma/
 ├── docs/                               # Project Documentation & API Specs
 ├── backend/                            # Laravel REST API
 │   ├── app/
@@ -140,6 +140,6 @@ mindcare-final/
 8. Ahmed Salama El sayed Abdel Khalik
 
 ## ⚠️ Disclaimer
-MindCare is an academic project and does not replace professional medical care.
+Calma is an academic project and does not replace professional medical care.
 In an emergency, contact your local emergency or mental health hotline.
 
