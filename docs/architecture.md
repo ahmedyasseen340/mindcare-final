@@ -7,11 +7,11 @@ Calma is made of four main parts that talk to each other over HTTPS:
 | Component | Tech | Users |
 |---|---|---|
 | Mobile App | Flutter | Patients |
-| Web Dashboard | React + TailwindCSS | Doctors, Admins |
+| Web Dashboard (frontend/) | React + TailwindCSS | Doctors, Admins |
 | Backend API | PHP / Laravel + MySQL | Both clients |
 | AI Services | Python (FastAPI) | Called by the Backend / Mobile App |
 
-Supporting services: **n8n** (scheduled workflows), **Firebase Cloud Messaging** (push notifications),
+Supporting services: **Firebase Cloud Messaging** (push notifications),
 **Paymob / Fawry** (payments), **Google Maps Places API** (pharmacies), **OpenAI / Llama 3** (LLM).
 
 ## 2. High-Level Diagram
@@ -37,7 +37,6 @@ flowchart LR
         OC[OCR - EasyOCR/Google Vision]
     end
 
-    N8[n8n Workflows]
     FCM[Firebase FCM]
     PAY[Paymob / Fawry]
     MAP[Google Maps Places]
@@ -52,10 +51,7 @@ flowchart LR
     API --> CH
     API --> CR
     API --> OC
-    CH --> LLM
-    API --> N8
-    N8 --> LLM
-    N8 --> FCM
+    CH --> LLM    
     API --> FCM
     API --> PAY
     M --> MAP
@@ -109,10 +105,10 @@ flowchart LR
    (DB transaction + unique constraint on doctor + time).
 2. Patient selects slot and type (online / in-person) → payment via Paymob/Fawry.
 3. Payment webhook confirms → booking status becomes `confirmed`.
-4. n8n sends reminders: **1 day before**, **1 hour before**, and **at session time**.
+4. Laravel Scheduler sends reminders: **1 day before**, **1 hour before**, and **at session time**.
 
 ### 4.7 Weekly Status Summary
-- n8n cron job (end of each week) collects mood and session data → LLM generates a statistical summary →
+- Laravel scheduled command (runs at the end of each week) collects mood and session data → LLM generates a statistical summary →
   saved and shown on both patient and doctor screens.
 
 ## 5. Suggested Database Tables
@@ -139,5 +135,4 @@ flowchart LR
 - Backend + MySQL: VPS or cloud (Nginx + PHP-FPM), or Docker Compose.
 - AI services: separate container (needs more RAM; GPU optional).
 - Web dashboard: static build on Netlify/Vercel/Nginx.
-- n8n: self-hosted container.
 - Mobile: APK for the demo, Play Store optional.
