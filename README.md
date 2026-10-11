@@ -26,7 +26,8 @@ doctors, and multimodal emotion analysis to make psychological support easier to
 | Web Dashboard | React, TailwindCSS |
 | Backend | PHP / Laravel, Sanctum (JWT), MySQL |
 | AI Services | Python, FastAPI, DeepFace, OpenCV, Whisper, Librosa, EasyOCR |
-| LLM / Automation | OpenAI GPT-4o or Llama 3, LangChain, n8n |
+| LLM | OpenAI GPT-4o or Llama 3, LangChain |
+| Scheduling | Laravel Scheduler + Queues |
 | 3D | Three.js (.glb) |
 | Notifications | Firebase Cloud Messaging |
 | Payments | Paymob / Fawry |
