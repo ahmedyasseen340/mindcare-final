@@ -40,11 +40,11 @@ doctors, and multimodal emotion analysis to make psychological support easier to
 | `mobile-app/` | Flutter patient app |
 | `frontend/` | React dashboard for doctors/admins |
 | `ai-services/` | Python AI microservices |
-| `docs/` | Documentation, ERD, SQL schema |
-| `assets/` | 3D models and audio files |
 | `data-analysis/` | Mood Index, weekly summaries, and progress charts |
 | `testing/` | Test cases, bug reports, and test results |
+| `docs/` | Architecture, API endpoints, ERD, SQL schema |
 | `chapters/` | Graduation project documentation chapters |
+| `assets/` | 3D models and audio files |
 
 ## 🚀 Getting Started
 ### Prerequisites
@@ -80,56 +80,62 @@ cd ai-services
 python -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-uvicorn main:app --reload
+# Each service (chatbot, vision, voice, ocr, crisis-classifier) has its own
+# entry point – see the README inside each folder.
 ```
 
 ## 🔐 Environment Variables
 Copy `.env.example` to `.env` and fill in: DB credentials, OpenAI key,
 Firebase, Paymob/Fawry, Google Maps. **Never commit real keys.**
+
 ---
 
-## 📁 Detailed Project Structure
+## 🗂️ Detailed Project Structure
 
 ```text
- Calma/
-├── docs/                               # Project Documentation & API Specs
+Calma/
+├── docs/                               # Technical documentation
+│   ├── architecture.md
+│   ├── api-endpoints.md
+│   └── database/
+│       └── schema.sql                  # Database schema
 ├── backend/                            # Laravel REST API
 │   ├── app/
 │   │   ├── Http/Controllers/
 │   │   ├── Models/
 │   │   └── Services/
 │   ├── routes/
-│   │   └── api.php                     # API Endpoints
+│   │   └── api.php                     # API endpoints
 │   ├── database/
 │   └── tests/
-├── frontend/                           # React + TailwindCSS Web Dashboard
+├── frontend/                           # React + TailwindCSS web dashboard
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
 │   │   ├── hooks/
 │   │   └── context/
 │   └── package.json
-├── mobile-app/                         # Flutter Patient Application
+├── mobile-app/                         # Flutter patient application
 │   ├── lib/
 │   │   ├── screens/
 │   │   ├── widgets/
 │   │   ├── services/
 │   │   └── main.dart
 │   └── pubspec.yaml
-├── ai-services/                        # Python AI Microservices
+├── ai-services/                        # Python AI microservices
 │   ├── chatbot/                        # LLM (PHQ-9 / GAD-7)
-│   ├── vision/                         # Facial Emotion Detection (DeepFace/OpenCV)
-│   ├── voice/                          # Voice Tone Analysis (Whisper/Librosa)
+│   ├── vision/                         # Facial emotion detection (DeepFace/OpenCV)
+│   ├── voice/                          # Voice tone analysis (Whisper/Librosa)
 │   ├── ocr/                            # Prescription OCR
 │   ├── crisis-classifier/              # Crisis Safety Net
 │   └── requirements.txt
-├── data-analysis/                      # Mood Index & Weekly Progress Summaries
-├── assets/                             # 3D Brain Models (.glb) & Audio Files
-├── testing/                            # Test Cases & Bug Reports
-├── database/
-│   └── schema.sql                      # Database Schema
-├── .env.example                        # Environment Variables Template
-└── README.md                           # Main Project Documentation
+├── data-analysis/                      # Mood Index & weekly progress summaries
+├── testing/                            # Test cases & bug reports
+├── chapters/                           # Graduation project documentation chapters
+├── assets/                             # 3D brain models (.glb) & audio files
+├── .env.example                        # Environment variables template
+└── README.md                           # Main project documentation
+```
 
 ## 👥 Team
 1. Ahmed Yasseen Ibrahim Mohamed
@@ -144,4 +150,3 @@ Firebase, Paymob/Fawry, Google Maps. **Never commit real keys.**
 ## ⚠️ Disclaimer
 Calma is an academic project and does not replace professional medical care.
 In an emergency, contact your local emergency or mental health hotline.
-
